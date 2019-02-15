@@ -1,0 +1,42 @@
+.map-container{
+    position: absolute;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0;
+    bottom: 0;
+}
+.map-container .mapboxgl-map {
+    height: 100%;
+}
+.left-text {
+    text-align: left !important;
+}
+
+/*** Assign employees **/
+h1 {
+    font-size: 30px;
+}
+
+.checkbox-next:checked + li{
+    background-color: teal;
+    color: #ffffff;
+}
+
+/*** project analytics dash section ***/
+.collection .collection-item.avatar .title {
+    font-weight: 500;
+    font-size: 22px;
+    position: relative;
+}
+.collection-item p {
+    font-weight: 400;
+    font-size: 17px;
+}
+.collection .collection-item .close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: inherit;
+    border: none;
+    outline: none;
+}

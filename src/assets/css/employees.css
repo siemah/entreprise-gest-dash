@@ -1,0 +1,17 @@
+.employees-list .collection-item a {
+    color: #ac0b6e;
+    font-weight: 500;
+}
+.title-name {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.collection .collection-item.avatar .secondary-content {
+    top: 13px;
+}
+.employee-photo{
+    background-size: contain; 
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}

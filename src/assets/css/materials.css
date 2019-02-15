@@ -1,0 +1,25 @@
+
+@keyframes sliding {
+  0% {display: block; opacity: 0;bottom: -500px}
+  100%{opacity: 1;bottom: 0;}
+}
+@keyframes fading {
+  0% {display: block; opacity: 0;}
+  100%{opacity: .5;}
+}
+
+.modal.bottom-sheet.show {
+  opacity: 1;
+  z-index: 1003;
+  display: block;
+  bottom: 0;
+  animation: sliding .3s ease-in;
+  overflow-x: hidden;
+}
+
+.modal.show + .modal-overlay {
+  z-index: 1002 !important;
+  display: block;
+  opacity: 0.5;
+  animation: fading .3s ease-in;
+}
