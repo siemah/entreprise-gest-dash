@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // for browsers support ie8
-import 'es5-shim';
-import 'es5-shim/es5-sham';
-import 'console-polyfill';
-
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
