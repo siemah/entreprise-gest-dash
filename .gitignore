@@ -1,3 +1,15 @@
 node_modules/
 build/
 server/
+.firebase/
+.vscode/
+dist/
+
+
+
+storage.rules
+firestore.rules
+firebase.json
+firestore.indexes.json
+.firebaserc
+
