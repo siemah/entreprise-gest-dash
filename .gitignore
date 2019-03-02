@@ -3,7 +3,7 @@ build/
 .firebase/
 .vscode/
 dist/
-server/
+server/node_modules/
 
 
 
