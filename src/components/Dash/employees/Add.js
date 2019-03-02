@@ -34,7 +34,6 @@ class Add extends Component {
     e.preventDefault();
     let { state, props } = this;
     let { editEmployee } = props;
-    console.log('sucmit', state);
     for (let inx in state)
       if ((!state[inx] || !state[inx].toString().trim().length) && inx !== 'image') {
         props.addAlert(

@@ -72,7 +72,6 @@ export const ChartCard = ({data, title, id, ...props}) => {
       `${invnt.dateOfInventory}`,
     ]
   ));
-  //console.log(dataChart)
   return (
     <div className="card z-depth-0">
       <div className="card-image waves-effect waves-block waves-light lighten-1">

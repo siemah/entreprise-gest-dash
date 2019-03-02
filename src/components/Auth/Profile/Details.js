@@ -46,7 +46,6 @@ class Details extends Component {
 
   componentDidUpdate = (prevProps, prevState) => {
     let { profile } = this.props;
-    console.log(prevProps, profile);
     if( prevProps.profile !== profile ) {
       this.setState({
         fname: profile.fname || '',
@@ -56,12 +55,7 @@ class Details extends Component {
         bio: profile.bio || ''
       })
     }
-  }
-  
-  componentDidMount = () => {
-    console.log(this.props.profile);    
-  }
-  
+  } 
 
   render() {
     let { updateProfileError, updateProfileLoading, isLoggedIn, profile} = this.props;

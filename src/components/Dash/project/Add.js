@@ -107,7 +107,6 @@ class Add extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  //console.log('ownProps', ownProps.isEdit);
   let _return = {
     isLoggedIn: state.firebase.auth.uid || false,
   };

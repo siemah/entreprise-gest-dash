@@ -106,7 +106,6 @@ class Register extends React.Component {
  */
 const mapStateToProps = ({ auth, firebase }, ownProps) => {
   let { registerLoading: loading, registerError: error } = auth;
-  console.log(firebase.auth.uid)
   return {
     isLoggedIn: firebase.auth.uid || false,
     loading, 

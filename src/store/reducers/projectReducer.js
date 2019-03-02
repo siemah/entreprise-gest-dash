@@ -75,7 +75,6 @@ export const projectReducer = (state=initState, action) => {
         declineEmployeesSuccess: null,
       }
     case 'DELETE_EMPLOYEE_FROM_PROJECT_SUCCESS':
-      console.log('state will change');
       return {
         ...state,
         declineEmployeesLoading: false,

@@ -7,7 +7,6 @@ import { Preloader } from 'react-materialize'
 import Container from 'react-materialize/lib/Container';
 
 const Edit = (props) => {
-  console.log("editProject", props);
   return (
     <div>
     {

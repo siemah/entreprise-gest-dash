@@ -104,7 +104,6 @@ class AddEmployees extends Component {
 
   _onChange({target}) {
     let {name, checked, value, type} = target;
-    console.log(type, checked, name, value);
     this.setState({[name]: value})
   }
 

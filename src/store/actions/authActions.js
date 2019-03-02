@@ -4,7 +4,6 @@
 export const register = ({ user, component }) => (dispatch, getState, {getFirebase, getFirestore}) => {
   let { fullname, mobile, email, password } = user;
   let { push, empty, elemNode } = component;
-  //console.log('register start')
   dispatch({type: 'POST_REGISTER_START'});
   getFirebase().auth()
     .createUserWithEmailAndPassword(email, password)
@@ -21,7 +20,6 @@ export const register = ({ user, component }) => (dispatch, getState, {getFireba
           dispatch({type: 'POST_REGISTER_SUCCESS'});
         })
         .catch ((err) => {
-          console.log(err);
           dispatch({type: 'POST_REGISTER_ERROR', err: err.message})
         });
     })
@@ -49,7 +47,6 @@ export const login = ({user, component}) => (dispatch, getState, {getFirebase}) 
 export const logout = () => (dispatch, getState, {getFirebase}) => {
   getFirebase().auth().signOut()
     .then((res) => {
-      console.log('logout ', res)
       dispatch({type: 'POST_LOGOUT_SUCCESS'})
     })
     .catch(err => dispatch({ type: 'POST_LOGOUT_ERROR' }));
@@ -67,7 +64,6 @@ export const updateDetails = ({details, component}) => (dispatch, getState, {get
     dispatch({ type: 'UPDATE_PROFILE_DETAILS_SUCCESS' });
     component.push('/');
   }).catch(err => {
-    console.log(err);
     dispatch({ type: 'UPDATE_PROFILE_DETAILS_ERROR', err: err.message });
   })
 }
@@ -89,11 +85,9 @@ export const setPassword = ({password, component}) => (dispatch, getState, {getF
   getFirebase().auth().currentUser.updatePassword(password)
     .then(() => {
       dispatch({ type: 'UPDATE_PASSWORD_SUCCESS', message: 'Password changed with success ;)'})
-      console.log('updated pass')
       component.target.reset();
     })
     .catch(err => {
-      console.log('err ', err);
       dispatch({type: 'UPDATE_PASSWORD_ERROR', err: err.message})
     })
 }

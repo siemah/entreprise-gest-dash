@@ -39,14 +39,12 @@ export const addEmployee = ({employee, component}) => (dispatch, getState, {getF
           dispatch({ type: 'POST_ADD_EMPLOYEE_SUCCESS' });
           component.push('/employees/list');
         } catch (err) {
-          console.log('url error', err);
           dispatch({ type: 'POST_ADD_EMPLOYEE_ERROR', message: err.message })
         }
 
       }
     )
   }).catch(err => {
-    console.log(err)
     dispatch({type: 'POST_ADD_EMPLOYEE_ERROR', message: err.message})
   })
 }
@@ -73,7 +71,6 @@ export const updateEmployee = ({employee, component}) => async (dispatch, getSta
       message: `Updated ${employee.fname} ${employee.lname} with success ;)`
     });
   } catch (error) {
-    console.log('update error ', error)
     dispatch({ type: 'UPDATE_EMPLOYEE_ERROR', message: error.message })
   }
 }

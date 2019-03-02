@@ -31,13 +31,11 @@ export const add = ({ material, component }) => async (dispatch, getState, { get
           component.target.reset();
           component.push('/');
         } catch (error) {
-          console.log(error)
           dispatch({ type: 'POST_ADD_MATERIAL_ERROR', message: error.message });          
         }  
       }
     )
   } catch (error) {
-    console.log(error)
     dispatch({ type: 'POST_ADD_MATERIAL_ERROR', message: error.message });
   }
 }
@@ -59,7 +57,6 @@ export const modifyInventory = (material) => async (dispatch, getState, {getFire
   try {
     let currentMaterial = await getFirestore().collection('materials').doc(currentMaterialId).get();
     let { currentQuantity } = currentMaterial.data();
-    console.log(material.projectId);
     await getFirestore().collection('materials').doc(currentMaterialId).update({
       currentQuantity: parseFloat(currentQuantity) + parseFloat(quantityToAdd),
       inventoryHistory: getFirebase().firestore.FieldValue.arrayUnion({

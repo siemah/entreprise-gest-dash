@@ -41,10 +41,8 @@ class Add extends Component {
     e.preventDefault();
     let { state, props } = this;
     let { editMaterial } = this.props;
-    console.log(state);
     for (let inx in state) 
       if ( (!state[inx] || !state[inx].toString().trim().length) && inx !== 'image' ) {
-        console.log(inx);
         props.addAlert( 
           'Check Field/s value there is (one/more than one) is empty :(',
           'POST_ADD_MATERIAL_ERROR',

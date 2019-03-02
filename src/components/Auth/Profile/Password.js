@@ -17,7 +17,6 @@ class Password extends Component {
   _onSubmit = e => {
     e.preventDefault();
     let {state, props} = this;
-    console.log(state.password !== state.confirmation);
     for (let inx in state)
       if (!state[inx] || !state[inx].trim().length) {
         props.addAlert(

@@ -15,7 +15,6 @@ export const addProject = ({project, component}) => (dispatch, getState, {getFir
       component.push('/projects/list');
     })
     .catch( err => {
-      console.log(err);
       dispatch({type: 'POST_ADD_PROJECT_ERROR', err: err.message});
     });
 };
@@ -27,17 +26,14 @@ export const addProject = ({project, component}) => (dispatch, getState, {getFir
  */
 export const updateProject = ({ project, currentDoc, component}) => (dispatch, getState, {getFirestore}) =>{
   dispatch({ type: 'POST_ADD_PROJECT_START' })
-  console.log('POST_UPDATE_PROJECT_START', currentDoc);
   getFirestore().collection('projects').doc(currentDoc).update({
     ...project
   })
   .then(() => {
-    console.log('POST_UPDATE_PROJECT_SUCCESS')
     dispatch({type: 'POST_UPDATE_PROJECT_SUCCESS'})
     component.push('/projects/list')
   })
   .catch(err => {
-    console.log('error', err)
     dispatch({ type: 'POST_UPDATE_PROJECT_SUCCESS', err: err.message })
   })
 }
@@ -71,7 +67,6 @@ export const assignEmployees = (details) => async (dispatch, getState, {getFires
     target.reset();
     redirectTo('/dashboard/analytics/projects/')
   } catch (error) {
-    console.log(error.message);
     dispatch({ type: 'POST_ASSIGN_EMPLOYEES_TO_PROJECT_ERROR', err: error.message });    
   }
 }
@@ -85,7 +80,6 @@ export const assignEmployees = (details) => async (dispatch, getState, {getFires
  */
 export const deleteEmployees = (projectId, employeeId, push) => async (dispatch, getState, {getFirestore, getFirebase}) => {
  dispatch({type: 'DELETE_EMPLOYEE_FROM_PROJECT_START'})
-  console.log(push);
   try {
     let prj = await getFirestore().collection('projects').doc(projectId).get();
     let { employees } = prj.data();
@@ -99,7 +93,6 @@ export const deleteEmployees = (projectId, employeeId, push) => async (dispatch,
     });
     if (!employees.length) window.location.reload();
   } catch (error) {
-    console.log(error);
     dispatch({ type: 'DELETE_EMPLOYEE_FROM_PROJECT_ERROR', message: 'Try again after a moment :('})
   }
 }

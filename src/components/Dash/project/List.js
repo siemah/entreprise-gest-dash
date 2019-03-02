@@ -27,7 +27,6 @@ const List = ({isLoggedIn, projects}) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-//  console.log('ordered', state.firestore.ordered)
   return {
     isLoggedIn: state.firebase.auth.uid || false,
     projects: state.firestore.ordered.projects || []
