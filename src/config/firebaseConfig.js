@@ -12,7 +12,7 @@ firebase.initializeApp({
   messagingSenderId: "61492096004"
 });
 
-firebase.firestore().settings({ cacheSizeBytes: 1048576, timestampsInSnapshots: true})
+firebase.firestore().settings({ cacheSizeBytes: 1048576})
 firebase.storage();
 
 export default firebase;
